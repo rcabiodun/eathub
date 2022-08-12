@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'vendor_website'
 
 ]
-
+print("bhitch better have mhy money")
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -153,7 +153,6 @@ AUTH_USER_MODEL='core.User'
 
 print("jsin")
 
-aa="sfsfaf"
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'eathub19@gmail.com'
