@@ -1,0 +1,71 @@
+TO MAKE A REQUEST TO THESE ENDPOINTS THE TOKEN GOTTEN FROM REGISTRATIONS IS NEEDED
+
+'login'=Accepts  email and password
+'profile'= Doesnt need anything in the body of the request,sends back the body of the request
+
+
+POST
+path('<host>/vendor/createitem/',createitem){
+    details:creates an item
+    field_requirements:{
+        category:id of the category you want it to belong to(provided by the list of categories endpoint)
+        title:name of item"
+        price:price of the item
+        delivery_fee:fee of the item,
+        photo_url:pic of the item,
+        different_location_fee:fee for another location
+        delivery_date:proposed date of delivery
+    }
+}
+
+POST
+path('<host>/vendor/updateitem/<id>/',updateitem)){
+    details:updates an item
+    request_requirements:{
+        requires the id of the item to be updated
+    }
+    field_requirements:{
+        category:id of the category you want it to belong to(provided by the list of categories endpoint)
+        title:name of item"
+        price:price of the item
+        delivery_fee:fee of the item,
+        photo_url:pic of the item,
+        different_location_fee:fee for another location
+        delivery_date:proposed date of delivery
+    }
+}
+
+POST
+path('<host>/vendor/vendor_item_list/',vendorItemList){
+    details:Shows the list of items owned by the vendor
+    request_requirements:Doesn't require anything except for the user token which would be given upon signup 
+
+}
+
+POST
+path('<host>/vendor/itemdetail/<id>/',itemdetail){
+    details:shows the details of a particular item
+    request_requirements:Needs the id of the item
+
+}
+
+GET
+path('<host>/vendor/category_list/',category_list){
+    details:Shows the list of item categories available(e.g pastry...)
+    request_requirements:Doesn't require anything except for the user token which 
+}
+
+POST
+path('<host>/vendor/ordered_items/',ordered_items){
+    {
+    details:Shows the list of items owned by the vendor that has been ordered for
+    request_requirements:Doesn't require anything except for the user token which would be given upon signup }
+ }
+
+
+GET
+path('<host>/vendor/accept_item/<id>/',accept_item){
+    details:accepts the order item (this makes the item available for payment) 
+    request_requirements:needs  the id of the order item
+
+}

@@ -1,0 +1,102 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> Eathub || Sign Up </title>
+    <link href="{% static 'styles/signupstyle.css' %}" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+</head>
+
+<!-- After Form has been validated, redirect to child/vendor-sign-in.html  -->
+
+<body>
+    <section class="container">
+        <main class="main">
+            <aside id="section1">
+                <div class="icon">
+                    <div>
+                        <img src="{% static 'media\Web 1920 – 1.png' %}" alt=" icon-above">
+                    </div>
+            </aside>
+            <aside id="section2">
+                <a id="previous_button" href="{% url 'index' %}">Back</a>
+                <div class="nav">
+                    <div class="nav-items">
+                        <p> Already have an account? <a href="{% url 'login' %}" id='signin_nav'> 
+                            Sign in
+                        </a></p>
+                    </div>
+                    
+                </div>
+                <main class="content">
+                    <div class="header">
+                        <header class="text">Continue your Vendor Registration Here!</header>
+                    </div>
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div id='messages'>{{message}}</div>
+                        {% endfor %}
+                    {% endif %}
+                    <div class="form">
+                        <form action="{% url 'signup' %}" method="post">
+                        {% csrf_token %}
+                            <label for="fullname">Full Name</label>
+                            <input type="text" id="fname" name="fname" placeholder="Full Name (Surname First)">
+
+                            <label for="email"> E-mail Address</label>
+                            <input type="email" id="email" name="email" placeholder="E-mail address (Email)">
+
+                            <label for="Business-address">Business Address</label>
+                            <input type="text" id="b-address" name="b-address" placeholder="Work Address (Business Address)">
+
+                            <label for="Business-address">Kitchen Name</label>
+                            <input type="text" id="b-address" name="brand_name" placeholder="Kitchen Name">
+
+                                <label for="contact">Phone Number</label>
+                                <input type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="11" id="digits" name="digits" placeholder="Phone Number (+234)">
+                                
+                                
+                                
+                            <label for="city">Nearest City (L.G.A)</label>
+                            <select id="city" name="city">
+                                <option value="Agege">Agege</option>
+                                <option value="Alimosho">Alimosho</option>
+                                <option value="Apapa">Apapa</option>
+                                <option value="Amuwo-Odofin">Amuwo-Odofin</option>
+                                <option value="Badagry">Badagry</option>
+                                <option value="Epe">Epe</option>
+                                <option value="Eti-Osa">Eti-Osa</option>
+                                <option value="Lekki">Ibeju/Lekki</option>
+                                <option value="Ifako">Ifako-Ijaiye</option>
+                                <option value="Ikeja">Ikeja</option>
+                                <option value="Ikorodu">Ikorodu</option>
+                                <option value="Kosofe">Kosofe</option>
+                                <option value="Lagos-island">Lagos-Island</option>
+                                <option value="Lagos-mainland">Lagos-Mainland</option>
+                                <option value="Mushin">Mushin</option>
+                                <option value="Ojo">Ojo</option>
+                                <option value="Oshodi">Oshodi-Isolo</option>
+                                <option value="Shomolu">Shomolu</option>
+                                <option value="Surulere">Surulere</option>
+                            </select>
+                            <label for="social_links">Social Page (links)</label>
+                            <input type="text" id="b-address" name="social_links" placeholder="Something like https://www.instagram.com/....">
+                            <label for="password">Password</label>
+                            <input type="password" id="psword" name="password" placeholder="Password">
+                            <label for="password">Confirm Password</label>
+                            <input type="password" id="psword" name="confirm-password" placeholder="Confirm Password">
+
+                            <input type="submit" value="Register"
+                                href="#">
+                        </form>
+                    </div>
+                </main>
+            </aside>
+        </main>
+    </section>
+</body>
+
+</html>

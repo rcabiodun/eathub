@@ -1,0 +1,266 @@
+* {
+    color: rgb(247, 245, 245);
+    font-weight: 600;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+body {
+    background-image: url('/static/media/Eathub-Page.png');
+    font: sans-serif;
+    font-size: large;
+    margin: 1rem;
+    text-align: left;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.container {
+    width: 80%;
+    height: 80%;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, -2);
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+    background: inherit;
+    overflow: hidden;
+}
+
+.container:before {
+    content: "";
+    position: absolute;
+    background: rgb(238, 238, 238, 0.2);
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    margin: -20px;
+}
+
+.main {
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+}
+
+#section1 {
+    width: 50%;
+    float: left;
+    background-color: white;
+}
+
+.icon {
+    height: 100%;
+}
+
+#section1 img {
+    width: 100%;
+    height: 100%;
+}
+
+#section2 {
+    width: 50%;
+    height: 100%;
+    float: right;
+    padding: 2rem;
+    align-items: flex-start;
+    justify-content: center;
+    overflow-y: scroll;
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: flex-end;
+    padding: 0.5rem;
+}
+
+.nav-items {
+    margin-left: 1rem;
+}
+
+p,
+a {
+    font-size: 15px;
+    color:#fff;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: red;
+    transition: all 0.3s ease;
+}
+
+.content {
+    padding: 2rem;
+}
+
+.header {
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.text {
+    font-size: xx-large;
+    font-weight: 600;
+    letter-spacing: 2px
+}
+
+.form {
+    padding-bottom: 2rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: .5rem;
+    box-sizing: border-box;
+    color: rgb(170, 168, 168);
+}
+
+input[type=submit] {
+    width: 8em;
+    background-color: red;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 1rem;
+    font-size: 17px;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 400px #ccc;
+    transition: all 0.3s ease;
+}
+
+input[type=submit]:hover {
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: red;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.footer {
+    margin: -2rem;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: baseline;
+}
+
+.component {
+    display: flex;
+    flex-direction: row;
+}
+
+#messages{
+    color:#e32;
+    text-align: center;
+    font-weight: 600;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-bottom: 1em;
+}
+
+#previous_button{
+    color:white;
+    font-size: 15px;
+    padding:.5em 1em .5em 1em;
+    margin-bottom: 2em;
+    margin-top: 1em;
+    background-color: red;
+    border-radius: .5em;
+    transition: all 0.3s ease;
+}
+
+#previous_button:hover{
+    color:red;
+    background-color: transparent;
+    font-weight: bold;
+    border:2px solid #fff;
+    transition: all 0.3s ease;
+}
+
+#signin_nav{
+    text-decoration: underline;
+    font-weight: bold;
+    color: #000;
+   
+}
+#signin_nav:hover{
+    color: red;
+    text-decoration: underline;
+    transition: all 0.3s ease;
+}
+
+.iconpack{
+    width:50px;
+    height:50px;
+    margin-top: 40px;
+    
+}
+
+#google-icon{
+    margin-left: 30px;
+    margin-right: 10px;
+    
+}
+
+.signinoption{
+    
+    margin-left: .5em;
+    
+    display: flex;
+    flex-direction: row;
+}
+
+.signinoption p{
+    color:#fff;
+    font-size:15px;
+    font-weight: 700;
+    margin-top: 60px;
+}
+
+@media screen and (max-width: 1048px) {
+    #section1 {
+        display: none;
+    }
+    #section2 {
+        width: 100%;
+        height: 100%;
+        float: right;
+        padding: .5rem;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    .container {
+        width: 95%;
+        height: 65%;
+    }
+    .content {
+        padding: .5rem;
+    }
+}

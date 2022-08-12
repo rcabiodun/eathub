@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> Eathub || Login </title>
+    <link href="{% static 'styles/loginstyle.css' %}" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+</head>
+
+<!-- After Vendor has signed in, redirect to restaurant-management-system -->
+
+<body>
+    <section class="container">
+        <main class="main">
+            <aside id="section1">
+                <img src="{% static 'media/Web 1920 – 1.png' %}">
+            </aside>
+            
+            <aside id="section2">
+                <a id="previous_button" href="{% url 'index' %}">Back</a>
+                <div class="nav">
+                    <div class="nav-items">
+                        <p> New User? <a href="{% url 'signup'%}" id='signin_nav'>
+                            Sign Up
+                        </a></p>
+                    </div>
+                    
+                </div>
+                <main class="content">
+                    
+                    
+                    <div class="header">
+                        <header class="text"> Welcome,
+                            <span class="'txt"> Eathub Vendor</span>
+                            
+                        </header>
+                    </div>
+
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div id='messages'>{{message}}</div>
+                        {% endfor %}
+                    {% endif %}
+                    
+                    <div class="form">
+                        <form action="login" method="post">
+                            {% csrf_token %}
+                            <label for="email"> E-mail Address</label>
+                            <input type="email" id="email" name="email" placeholder="E-mail address">
+
+                            <label for="password">Password</label>
+                            <input type="password" id="psword" name="password" placeholder="Password">
+
+                            <input type="submit" value="Login">
+                        </form>
+                    </div>
+                    <div class='signinoption'>
+                        <p>Sign in with:</p>
+                        <div id='google-icon'>
+                            <a href='#'><img src="{% static './media/google-logo.png' %}" class="iconpack" id="google"></a>
+                        </div>
+                        <div id='facebook-icon'>
+                            <a href="#"><img src="{% static './media/facebook.png' %}" class="iconpack" id="facebook"></a>
+                        </div>
+                    </div>
+                    <section class="footer">
+                        
+                        
+                    </section>
+                </main>
+            </aside>
+        </main>
+    </section>
+</body>
+
+</html>
